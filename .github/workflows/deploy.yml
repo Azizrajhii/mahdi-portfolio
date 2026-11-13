@@ -30,6 +30,8 @@ jobs:
       # so the same workflow builds correct links for both.
       - id: pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - run: npm run build -- --base="${{ steps.pages.outputs.base_path }}/"
       - uses: actions/upload-pages-artifact@v3
         with:
